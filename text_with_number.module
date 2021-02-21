@@ -1,0 +1,30 @@
+<?php
+
+/**
+ * @file
+ * Primary hooks for text_with_number module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function text_with_number_theme($existing, $type, $theme, $path) {
+  return [
+    'text_with_number' => [
+      'file' => 'text_with_number.theme.inc',
+      'render element' => 'elements',
+    ],
+    'text_with_number__item' => [
+      'file' => 'text_with_number.theme.inc',
+      'variables' => ['elements' => [], 'value_type' => '', 'value' => NULL],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function text_with_number_theme_suggestions_text_with_number_alter(array &$suggestions, array $variables) {
+  \Drupal::moduleHandler()->loadInclude('text_with_number', 'inc', 'text_with_number.theme');
+  _handle_text_with_number_theme_suggestions($suggestions, $variables);
+}

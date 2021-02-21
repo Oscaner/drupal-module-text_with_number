@@ -1,0 +1,10 @@
+name: 'Text with Number'
+description: 'Defines text with number field types.'
+package: 'Text with Number types'
+version: VERSION
+core: 8.x
+type: module
+dependencies:
+  - drupal:field
+  - drupal:filter
+  - drupal:text

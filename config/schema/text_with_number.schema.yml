@@ -1,0 +1,97 @@
+# Schema for the configuration files of the text with number module.
+
+# Text with Number (formatted with Integer) field type.
+field.storage_settings.text_with_integer:
+  type: mapping
+  label: 'Text with Number (formatted with Integer) settings'
+  mapping:
+    text:
+      type: mapping
+      label: 'Text (formatted) settings'
+      mapping:
+        max_length:
+          type: integer
+          label: 'Maximum length'
+    number:
+      type: mapping
+      label: 'Number (Integer) settings'
+      mapping:
+        unsigned:
+          type: boolean
+          label: 'Unsigned'
+        size:
+          type: string
+          label: 'Database storage size'
+
+field.field_settings.text_with_integer:
+  type: mapping
+  label: 'Text with Number (formatted with Integer) settings'
+  mapping:
+    text:
+      type: mapping
+      label: 'Text settings'
+      mapping:
+        allowed_formats:
+          type: sequence
+          label: 'Allowed formats'
+          sequence:
+            type: string
+            label: 'Allowed format'
+    number:
+      type: mapping
+      label: 'Number settings'
+      mapping:
+        min:
+          type: integer
+          label: 'Minimum'
+        max:
+          type: integer
+          label: 'Maximum'
+        prefix:
+          type: label
+          label: 'Prefix'
+        suffix:
+          type: label
+          label: 'Suffix'
+
+field.value.text_with_integer:
+  type: mapping
+  label: 'Default value'
+  mapping:
+    text_value:
+      type: label
+      label: 'Text Value'
+    text_format:
+      type: string
+      label: 'Text format'
+    number_value:
+      type: integer
+      label: 'Number value'
+
+field.widget.settings.text_textfield_with_number:
+  type: mapping
+  label: 'Text field with Number settings'
+  mapping:
+    text:
+      type: mapping
+      label: 'Text settings'
+      mapping:
+        size:
+          type: integer
+          label: 'Size of textfield'
+        placeholder:
+          type: label
+          label: 'Placeholder'
+        hide_help:
+          type: boolean
+          label: 'Hide the help link <em>About text formats</em>'
+        hide_guidelines:
+          type: boolean
+          label: 'Hide text format guidelines'
+    number:
+      type: mapping
+      label: 'Number settings'
+      mapping:
+        placeholder:
+          type: label
+          label: 'Placeholder'
