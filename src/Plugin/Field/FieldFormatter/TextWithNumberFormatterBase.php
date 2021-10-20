@@ -2,14 +2,11 @@
 
 namespace Drupal\text_with_number\Plugin\Field\FieldFormatter;
 
-use Drupal\Core\Field\AllowedTagsXssTrait;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
 use Drupal\Core\Form\FormStateInterface;
 
 abstract class TextWithNumberFormatterBase extends FormatterBase {
-
-  use AllowedTagsXssTrait;
 
   /**
    * {@inheritdoc}
